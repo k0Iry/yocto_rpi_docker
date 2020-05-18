@@ -4,7 +4,7 @@ RUN useradd -u 1000 --create-home --shell /bin/bash yocto && \
     apt-get clean && \
     apt-get update && \
     apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
-    build-essential chrpath socat libsdl1.2-dev xterm cpio -y && \
+    build-essential chrpath socat python3 cpio -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install locales -y && \
     sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \

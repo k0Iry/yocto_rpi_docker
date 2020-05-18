@@ -1,7 +1,6 @@
 #!/bin/bash
 
 rm -rf build/*
-rm -f entry.sh
 source poky/oe-init-build-env
 
 cat >> "conf/bblayers.conf" << EOF

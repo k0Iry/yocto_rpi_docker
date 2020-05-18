@@ -1,7 +1,5 @@
 FROM debian:9
 
-SHELL ["/bin/bash", "-c"]
-
 RUN useradd -u 1000 --create-home --shell /bin/bash yocto && \
     apt-get clean && \
     apt-get update && \

@@ -14,9 +14,9 @@ RUN useradd -u 1000 --create-home --shell /bin/bash yocto && \
     git clone https://github.com/openembedded/meta-openembedded.git /home/yocto/meta-openembedded && \
     git clone https://github.com/k0Iry/meta-rpilinux.git /home/yocto/meta-rpilinux
 
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+ENV LANG=en_US.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=en_US.UTF-8
 
 WORKDIR /home/yocto
 USER yocto

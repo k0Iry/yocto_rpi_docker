@@ -21,10 +21,10 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 WORKDIR /home/yocto
+USER yocto
 
-COPY entry.sh start.sh /home/yocto/
+COPY start.sh /home/yocto/
 
 VOLUME /home/yocto/build
 
-ENTRYPOINT ["/bin/bash", "entry.sh"]
 CMD ["./start.sh"]

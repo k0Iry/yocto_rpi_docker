@@ -18,4 +18,7 @@ ENABLE_UART = "1"
 EOF
 
 bitbake rpilinux-image
-rm -rf build/downloads build/sstate-cache
+
+# cleaning
+ls | grep -v tmp | xargs rm -rf
+ls tmp | grep -v deploy | xargs rm -rf

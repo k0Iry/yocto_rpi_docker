@@ -21,4 +21,5 @@ bitbake rpilinux-image
 
 # cleaning
 ls | grep -v tmp | xargs rm -rf
-ls tmp | grep -v deploy | xargs rm -rf
+cd tmp
+ls | grep -v deploy | xargs rm -rf

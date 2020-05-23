@@ -3,6 +3,8 @@
 rm -rf build/*
 source poky/oe-init-build-env
 
+# bitbake-layers is not very reliable for adding layers
+# we do it so manually
 cat >> "conf/bblayers.conf" << EOF
 BBLAYERS += " /home/yocto/meta-raspberrypi "
 BBLAYERS += " /home/yocto/meta-rpilinux "

@@ -13,6 +13,11 @@ BBLAYERS += " /home/yocto/meta-openembedded/meta-python "
 BBLAYERS += " /home/yocto/meta-openembedded/meta-oe "
 EOF
 
+# override variable MACHINE if you want to
+# build another target, e.g. you don't want 64 bits
+# then you define MACHINE = raspberrypi4,
+# find machines supported here: 
+# https://github.com/agherzan/meta-raspberrypi/tree/master/conf/machine
 cat >> "conf/local.conf" << EOF
 MACHINE = "raspberrypi4-64"
 IMAGE_FSTYPES = "tar.xz ext3 rpi-sdimg"

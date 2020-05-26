@@ -1,5 +1,10 @@
 #!/bin/bash
 
+git clone git://git.yoctoproject.org/poky
+git clone git://git.yoctoproject.org/meta-raspberrypi
+git clone https://github.com/openembedded/meta-openembedded.git
+git clone https://github.com/k0Iry/meta-rpilinux.git
+
 rm -rf build/*
 source poky/oe-init-build-env
 

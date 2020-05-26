@@ -8,11 +8,7 @@ RUN useradd -u 1000 --create-home --shell /bin/bash yocto && \
     DEBIAN_FRONTEND=noninteractive apt-get install locales -y && \
     sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
-    update-locale LANG=en_US.UTF-8 && \
-    git clone git://git.yoctoproject.org/poky /home/yocto/poky && \
-    git clone git://git.yoctoproject.org/meta-raspberrypi /home/yocto/meta-raspberrypi && \
-    git clone https://github.com/openembedded/meta-openembedded.git /home/yocto/meta-openembedded && \
-    git clone https://github.com/k0Iry/meta-rpilinux.git /home/yocto/meta-rpilinux
+    update-locale LANG=en_US.UTF-8
 
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \

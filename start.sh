@@ -2,6 +2,7 @@
 
 git clone git://git.yoctoproject.org/poky
 git clone git://git.yoctoproject.org/meta-raspberrypi
+git clone git://git.yoctoproject.org/meta-virtualization
 git clone https://github.com/openembedded/meta-openembedded.git
 git clone https://github.com/k0Iry/meta-rpilinux.git
 
@@ -13,6 +14,7 @@ source poky/oe-init-build-env
 cat >> "conf/bblayers.conf" << EOF
 BBLAYERS += " /home/yocto/meta-raspberrypi "
 BBLAYERS += " /home/yocto/meta-rpilinux "
+BBLAYERS += " /home/yocto/meta-virtualization "
 BBLAYERS += " /home/yocto/meta-openembedded/meta-networking "
 BBLAYERS += " /home/yocto/meta-openembedded/meta-python "
 BBLAYERS += " /home/yocto/meta-openembedded/meta-oe "

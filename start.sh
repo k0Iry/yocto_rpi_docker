@@ -6,18 +6,20 @@ git clone git://git.yoctoproject.org/meta-virtualization
 git clone https://github.com/openembedded/meta-openembedded.git
 git clone https://github.com/k0Iry/meta-rpilinux.git
 
+current_dir = $PWD
+
 rm -rf build/*
 source poky/oe-init-build-env
 
 # bitbake-layers is not very reliable for adding layers
 # we do it so manually
 cat >> "conf/bblayers.conf" << EOF
-BBLAYERS += " $PWD/meta-raspberrypi "
-BBLAYERS += " $PWD/meta-rpilinux "
-BBLAYERS += " $PWD/meta-virtualization "
-BBLAYERS += " $PWD/meta-openembedded/meta-networking "
-BBLAYERS += " $PWD/meta-openembedded/meta-python "
-BBLAYERS += " $PWD/meta-openembedded/meta-oe "
+BBLAYERS += " $current_dir/meta-raspberrypi "
+BBLAYERS += " $current_dir/meta-rpilinux "
+BBLAYERS += " $current_dir/meta-virtualization "
+BBLAYERS += " $current_dir/meta-openembedded/meta-networking "
+BBLAYERS += " $current_dir/meta-openembedded/meta-python "
+BBLAYERS += " $current_dir/meta-openembedded/meta-oe "
 EOF
 
 # override variable MACHINE if you want to

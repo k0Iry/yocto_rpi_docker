@@ -12,12 +12,12 @@ source poky/oe-init-build-env
 # bitbake-layers is not very reliable for adding layers
 # we do it so manually
 cat >> "conf/bblayers.conf" << EOF
-BBLAYERS += " /home/yocto/meta-raspberrypi "
-BBLAYERS += " /home/yocto/meta-rpilinux "
-BBLAYERS += " /home/yocto/meta-virtualization "
-BBLAYERS += " /home/yocto/meta-openembedded/meta-networking "
-BBLAYERS += " /home/yocto/meta-openembedded/meta-python "
-BBLAYERS += " /home/yocto/meta-openembedded/meta-oe "
+BBLAYERS += " $PWD/meta-raspberrypi "
+BBLAYERS += " $PWD/meta-rpilinux "
+BBLAYERS += " $PWD/meta-virtualization "
+BBLAYERS += " $PWD/meta-openembedded/meta-networking "
+BBLAYERS += " $PWD/meta-openembedded/meta-python "
+BBLAYERS += " $PWD/meta-openembedded/meta-oe "
 EOF
 
 # override variable MACHINE if you want to
@@ -34,6 +34,6 @@ EOF
 bitbake rpilinux-image
 
 # cleaning
-ls | grep -v tmp | xargs rm -rf
-cd tmp
-ls | grep -v deploy | xargs rm -rf
+# ls | grep -v tmp | xargs rm -rf
+# cd tmp
+# ls | grep -v deploy | xargs rm -rf

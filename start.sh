@@ -16,6 +16,7 @@ BBLAYERS += " $PWD/../meta-raspberrypi "
 BBLAYERS += " $PWD/../meta-rpilinux "
 BBLAYERS += " $PWD/../meta-virtualization "
 BBLAYERS += " $PWD/../meta-openembedded/meta-networking "
+BBLAYERS += " $PWD/../meta-openembedded/meta-filesystems "
 BBLAYERS += " $PWD/../meta-openembedded/meta-python "
 BBLAYERS += " $PWD/../meta-openembedded/meta-oe "
 EOF

@@ -27,6 +27,7 @@ EOF
 # find machines supported here: 
 # https://github.com/agherzan/meta-raspberrypi/tree/master/conf/machine
 cat >> "conf/local.conf" << EOF
+DISTRO_FEATURES_append += "virtualization bluetooth wifi"
 MACHINE = "raspberrypi4-64"
 IMAGE_FSTYPES = "tar.xz ext3 rpi-sdimg"
 ENABLE_UART = "1"

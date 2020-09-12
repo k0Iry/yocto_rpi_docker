@@ -35,7 +35,8 @@ EOF
 
 bitbake rpilinux-image
 
+[ $? -eq 0 ] || exit 1
 # cleaning
-# ls | grep -v tmp | xargs rm -rf
-# cd tmp
-# ls | grep -v deploy | xargs rm -rf
+ls | grep -v tmp | xargs rm -rf
+cd tmp
+ls | grep -v deploy | xargs rm -rf

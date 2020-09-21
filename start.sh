@@ -35,8 +35,12 @@ EOF
 
 bitbake rpilinux-image
 
-[ $? -eq 0 ] || exit 1
-# cleaning
-ls | grep -v tmp | xargs rm -rf
-cd tmp
-ls | grep -v deploy | xargs rm -rf
+echo "start to clean up..."
+status=$?
+
+if test $status -eq 0
+then
+    ls | grep -v tmp | xargs rm -rf
+    cd tmp
+    ls | grep -v deploy | xargs rm -rf
+fi

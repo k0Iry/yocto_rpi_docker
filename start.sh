@@ -39,7 +39,7 @@ EOF
 cat >> "conf/local.conf" << EOF
     DISTRO_FEATURES_append += "virtualization bluetooth wifi"
     MACHINE = "raspberrypi4-64"
-    IMAGE_FSTYPES = "tar.xz ext3 rpi-sdimg"
+    IMAGE_FSTYPES = "rpi-sdimg"
     ENABLE_UART = "1"
 EOF
 fi

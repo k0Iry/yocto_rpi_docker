@@ -12,13 +12,13 @@ if [ -z "$(ls -A build)" ]; then
 fi
 
 read -p "Are you sure you want to clean the build?[y/n] " -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[Yy]$ ]]; then
     rm -rf build/*
 fi
 
 source poky/oe-init-build-env
 
-if [[ ! $REPLY =~ ^[Yy]$  || $initial = true ]]; then
+if [[ $REPLY =~ ^[Yy]$  || $initial = true ]]; then
     # bitbake-layers is not very reliable for adding layers
     # we do it so manually
 cat >> "conf/bblayers.conf" << EOF

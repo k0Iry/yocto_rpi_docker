@@ -22,13 +22,13 @@ if [[ ! $REPLY =~ ^[Yy]$  || $initial = true ]]; then
     # bitbake-layers is not very reliable for adding layers
     # we do it so manually
 cat >> "conf/bblayers.conf" << EOF
-    BBLAYERS += " $PWD/../meta-raspberrypi "
-    BBLAYERS += " $PWD/../meta-rpilinux "
-    BBLAYERS += " $PWD/../meta-virtualization "
-    BBLAYERS += " $PWD/../meta-openembedded/meta-networking "
-    BBLAYERS += " $PWD/../meta-openembedded/meta-filesystems "
-    BBLAYERS += " $PWD/../meta-openembedded/meta-python "
-    BBLAYERS += " $PWD/../meta-openembedded/meta-oe "
+BBLAYERS += " $PWD/../meta-raspberrypi "
+BBLAYERS += " $PWD/../meta-rpilinux "
+BBLAYERS += " $PWD/../meta-virtualization "
+BBLAYERS += " $PWD/../meta-openembedded/meta-networking "
+BBLAYERS += " $PWD/../meta-openembedded/meta-filesystems "
+BBLAYERS += " $PWD/../meta-openembedded/meta-python "
+BBLAYERS += " $PWD/../meta-openembedded/meta-oe "
 EOF
 
     # override variable MACHINE if you want to
@@ -37,10 +37,10 @@ EOF
     # find machines supported here: 
     # https://github.com/agherzan/meta-raspberrypi/tree/master/conf/machine
 cat >> "conf/local.conf" << EOF
-    DISTRO_FEATURES_append += "virtualization bluetooth wifi"
-    MACHINE = "raspberrypi4-64"
-    IMAGE_FSTYPES = "rpi-sdimg"
-    ENABLE_UART = "1"
+DISTRO_FEATURES_append += "virtualization bluetooth wifi"
+MACHINE = "raspberrypi4-64"
+IMAGE_FSTYPES = "rpi-sdimg"
+ENABLE_UART = "1"
 EOF
 fi
 

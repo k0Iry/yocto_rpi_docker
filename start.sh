@@ -6,9 +6,9 @@ git clone git://git.yoctoproject.org/meta-virtualization
 git clone https://github.com/openembedded/meta-openembedded.git
 git clone https://github.com/k0Iry/meta-rpilinux.git
 
-initial = false
+initial=false
 if [ -z "$(ls -A build)" ]; then
-    initial = true
+    initial=true
 fi
 
 read -p "Are you sure you want to clean the build?[y/n] " -n 1 -r
@@ -18,7 +18,7 @@ fi
 
 source poky/oe-init-build-env
 
-if [[ ! $REPLY =~ ^[Yy]$ ] || $"initial" = true]; then
+if [[ ! $REPLY =~ ^[Yy]$ ] || [$"initial" = true]]; then
     # bitbake-layers is not very reliable for adding layers
     # we do it so manually
     cat >> "conf/bblayers.conf" << EOF

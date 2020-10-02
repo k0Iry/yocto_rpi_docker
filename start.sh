@@ -18,7 +18,7 @@ fi
 
 source poky/oe-init-build-env
 
-if [[ ! $REPLY =~ ^[Yy]$ ] || [$"initial" = true]]; then
+if [[ ! $REPLY =~ ^[Yy]$ ] || [$initial = true]]; then
     # bitbake-layers is not very reliable for adding layers
     # we do it so manually
     cat >> "conf/bblayers.conf" << EOF

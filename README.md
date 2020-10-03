@@ -38,3 +38,7 @@ Check the raspberrypi's bsp layer for more information, decide whatever features
 Refer to Yocto Project websiet for more guide. I recommend [Quick Build](https://www.yoctoproject.org/docs/3.1/brief-yoctoprojectqs/brief-yoctoprojectqs.html) to get started.
 
 Check docker image here: https://hub.docker.com/repository/docker/kljsandjb/yocto_pi
+
+## Release
+
+Use python script to create the release and upload the file to it, need to fetch your own access token at first.

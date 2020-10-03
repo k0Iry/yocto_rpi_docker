@@ -18,6 +18,7 @@ WORKDIR /home/yocto
 USER yocto
 
 COPY start.sh /home/yocto/
+COPY github-release.py /home/yocto/
 
 VOLUME /home/yocto/build
 

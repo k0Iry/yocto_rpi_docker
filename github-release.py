@@ -35,7 +35,7 @@ def create_release(tag_name, body, name):
 def upload_asset(tag_name, body, name):
     upload_url = create_release(tag_name, body, name)
     image = Path(asset_path)
-    upload_url = upload_url.replace("{?name,label}", "?name={}".format(os.path.basename(image)))
+    upload_url = upload_url.replace("{?name,label}", "?name={}".format(os.path.basename(asset_path)))
     if not image.exists():
         print("missing asset")
         exit(1)

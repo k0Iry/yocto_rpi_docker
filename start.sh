@@ -9,11 +9,11 @@ git clone https://github.com/k0Iry/meta-rpilinux.git
 initial=false
 if [ -z "$(ls -A build)" ]; then
     initial=true
-fi
-
-read -p "Do you want to clean the build before start?[y/n] " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    rm -rf build/*
+else
+    read -p "Do you want to clean the build before start?[y/n] " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        rm -rf build/*
+    fi
 fi
 
 source poky/oe-init-build-env

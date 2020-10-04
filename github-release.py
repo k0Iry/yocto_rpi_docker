@@ -44,12 +44,14 @@ def upload_asset(tag_name, body, name):
     request.add_header("Authorization", "token {}".format(access_token))
     request.add_header("Content-Type", "application/octet-stream")
     # start to upload the asset to the release
+    print("Asset is uploading...")
     response = urllib.request.urlopen(request, data=binary.read())
     binary.close()
 
     if response.getcode() != 201:
         print("upload asset failed, HTTP Code: {}".format(response.getcode()))
         exit(1)
+    print("Asset has been successfully upload!")
 
 def main():
     if len(sys.argv) != 4:

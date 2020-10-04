@@ -18,6 +18,7 @@ services:
       - busybox
     restart: always
   yocto_pi:
+    hostname: yocto
     container_name: yocto_pi
     image: kljsandjb/yocto_pi:latest
     volumes:

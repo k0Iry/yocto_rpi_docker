@@ -19,8 +19,9 @@ fi
 source poky/oe-init-build-env
 
 if [[ $REPLY =~ ^[Yy]$  || $initial = true ]]; then
-    # bitbake-layers is not very reliable for adding layers
-    # we do it so manually
+
+# bitbake-layers is not very reliable for adding layers
+# we do it so manually
 cat >> "conf/bblayers.conf" << EOF
 BBLAYERS += " $PWD/../meta-raspberrypi "
 BBLAYERS += " $PWD/../meta-rpilinux "
@@ -31,11 +32,11 @@ BBLAYERS += " $PWD/../meta-openembedded/meta-python "
 BBLAYERS += " $PWD/../meta-openembedded/meta-oe "
 EOF
 
-    # override variable MACHINE if you want to
-    # build another target, e.g. you don't want 64 bits
-    # then you define MACHINE = raspberrypi4,
-    # find machines supported here: 
-    # https://github.com/agherzan/meta-raspberrypi/tree/master/conf/machine
+# override variable MACHINE if you want to
+# build another target, e.g. you don't want 64 bits
+# then you define MACHINE = raspberrypi4,
+# find machines supported here:
+# https://github.com/agherzan/meta-raspberrypi/tree/master/conf/machine
 cat >> "conf/local.conf" << EOF
 DISTRO_FEATURES_append += "virtualization bluetooth wifi"
 MACHINE = "raspberrypi4-64"
@@ -46,6 +47,7 @@ fi
 
 bitbake rpilinux-image
 
+# check if build succeeds
 status=$?
 
 if test $status -eq 0

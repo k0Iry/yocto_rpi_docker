@@ -1,3 +1,4 @@
 #!/bin/bash
 docker container prune -f
+docker image prune -a -f
 docker volume rm yocto_pi_myvolume

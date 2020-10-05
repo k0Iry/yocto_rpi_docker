@@ -16,7 +16,6 @@ services:
       - myvolume:/usr/src
     depends_on:
       - busybox
-    restart: always
   yocto_pi:
     hostname: yocto
     container_name: yocto_pi

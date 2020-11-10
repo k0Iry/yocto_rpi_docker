@@ -19,7 +19,7 @@ services:
   yocto_pi:
     hostname: yocto
     container_name: yocto_pi
-    image: kljsandjb/yocto_pi:latest
+    build: .
     volumes:
       - myvolume:/home/yocto/build
     command: bash

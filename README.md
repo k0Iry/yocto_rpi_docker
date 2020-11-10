@@ -3,21 +3,8 @@
 Build image by Yocto for Raspberrypi 4 board.
 
 ## How to use?
-### For docker CLI:
 
-```
-docker run -v /local/volume:/home/yocto/build -t -i kljsandjb/yocto_pi:latest
-```
-
-If you want to deal with the build configuration, you can change the start.sh as needed or run:
-
-```
-docker run -v /local/volume:/home/yocto/build -t -i kljsandjb/yocto_pi:latest /bin/bash
-```
-
-to interactively changing the meta-layers or configurations.
-
-### For docker compose with file server(Nginx) built in:
+### `docker-compose` with file server (*Nginx*) built in:
 
 ```
 docker-compose up -d
